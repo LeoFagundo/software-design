@@ -14,3 +14,17 @@ after { puts }                                                              #
 
 events_table = DB.from(:events)
 rsvps_table = DB.from(:rsvps)
+
+get "/" do
+    puts "params: #{params}"
+
+    pp events_table.all.to_a
+    view "events"
+end
+
+# get "/baconburgertacofest" do
+#     puts "params: #{params}"
+
+#     pp events_table.all.to_a
+#     view "events"
+# end
